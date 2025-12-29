@@ -1,5 +1,22 @@
 @charset "UTF-8";
 
+@font-face {
+    font-family: 'HakgyoansimPoster';
+    src: url('../fonts/Hakgyoansim_PosterB.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rockstar';
+    src: url('../fonts/Rockstar-ExtraBold.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -134,7 +151,7 @@ header ul li:hover {
 .heroTabs {
     position: relative;
     top: 170px;
-    font-family: "Hakgyoansim Poster B";
+    font-family: "HakgyoansimPoster";
     font-size: 16px;
     font-weight: lighter;
     margin-top: 36px;
@@ -216,7 +233,7 @@ header ul li:hover {
 
 .art h4 {
     font-size: 28px;
-    font-family: "Hakgyoansim Poster B";
+    font-family: "HakgyoansimPoster";
     font-weight: lighter;
     color: white;
     opacity: 0.6;
@@ -250,7 +267,7 @@ header ul li:hover {
 
 .current-inner h4 {
     font-size: 20px;
-    font-family: "Hakgyoansim Poster B";
+    font-family: "HakgyoansimPoster";
     font-weight: lighter;
     color: white;
     opacity: 0.6;
@@ -360,7 +377,7 @@ header ul li:hover {
 
 .notice h4 {
     font-size: 20px;
-    font-family: "Hakgyoansim Poster B";
+    font-family: "HakgyoansimPoster";
     font-weight: lighter;
     color: white;
     opacity: 0.6;
@@ -596,7 +613,7 @@ header ul li:hover {
 
 .collection-inner h4 {
     font-size: 20px;
-    font-family: "Hakgyoansim Poster B";
+    font-family: "HakgyoansimPoster";
     font-weight: lighter;
     color: white;
     opacity: 0.6;
@@ -745,7 +762,7 @@ header ul li:hover {
 /* 소제목 */
 .moments-text .eyebrow {
     font-size: 20px;
-    font-family: "Hakgyoansim Poster B";
+    font-family: "HakgyoansimPoster";
     font-weight: lighter;
     opacity: 0.6;
     margin-bottom: 12px;

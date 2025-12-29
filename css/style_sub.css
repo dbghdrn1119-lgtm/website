@@ -1,5 +1,21 @@
 @charset "UTF-8";
 
+@font-face {
+    font-family: 'HakgyoansimPoster';
+    src: url('../fonts/Hakgyoansim_PosterB.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rockstar';
+    src: url('../fonts/Rockstar-ExtraBold.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
 * {
     margin: 0;
     padding: 0;
