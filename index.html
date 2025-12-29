@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수원시립미술관</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script/script.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <h1>
+                <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+            </h1>
+            <ul>
+                <li><a href="#"><img src="images/search.jpg" alt="search"></a></li>
+                <li><a href="#"><img src="images/mypage.jpg" alt="mypage"></a></li>
+                <li><a href="#"><img src="images/language.jpg" alt="language"></a></li>
+                <li><button type="button" class="hamburgerBtn" id="btnMenu" aria-label="메뉴 열기" aria-controls="sideMenu"
+                        aria-expanded="false">
+                        <img src="images/hamburger.jpg" alt="hamburger"></button></li>
+            </ul>
+        </header>
+
+        <div class="menuOverlay" id="menuOverlay"></div>
+
+        <aside class="sideMenu" id="sideMenu" aria-hidden="true">
+            <div class="sideTop">
+                <p class="sideTitle">MENU</p>
+                <button type="button" class="sideClose" id="btnClose" aria-label="메뉴 닫기">✕</button>
+            </div>
+
+            <nav class="sideNav">
+                <a href="subpage.html">미술관 소개 (INTROTUCE)</a>
+                <a href="index.html">관람안내 (VISIT)</a>
+                <a href="subpage.html">전시 (EXHIBITIONS)</a>
+                <a href="index.html">프로그램 (PROGRAMS)</a>
+                <a href="subpage.html">소식/공지 (NEWS)</a>
+            </nav>
+        </aside>
+        <!-------------------------------header--------------------------------------------->
+        <section class="art">
+            <button class="arrow prev">&#10094;</button>
+            <div class="slider">
+                <div class="track">
+
+                    <div class="slide slide3 clone">
+                        <div class="herotext">
+                            <h2>ART & EXPERIENCE</h2>
+                            <h4>예술이 일상과 이어지는 순간</h4>
+                            <ul class="heroTabs">
+                                <li class="active">관람안내 <span>(VISIT)</span></li>
+                                <li>전시 <span>(EXHIBITIONS)</span></li>
+                                <li>프로그램 <span>(PROGRAMS)</span></li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <div class="slide slide1">
+                        <div class="herotext">
+                            <h2>ART IN SUWON</h2>
+                            <h4>예술이 머무는 차분한 순간</h4>
+                            <ul class="heroTabs">
+                                <li class="active">관람안내 <span>(VISIT)</span></li>
+                                <li>전시 <span>(EXHIBITIONS)</span></li>
+                                <li>프로그램 <span>(PROGRAMS)</span></li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <div class="slide slide2">
+                        <div class="herotext">
+                            <h2>MOMENTS OF ART</h2>
+                            <h4>빛과 여백 속에서 예술은 더 선명해집니다</h4>
+                            <ul class="heroTabs">
+                                <li class="active">관람안내 <span>(VISIT)</span></li>
+                                <li>전시 <span>(EXHIBITIONS)</span></li>
+                                <li>프로그램 <span>(PROGRAMS)</span></li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <div class="slide slide3">
+                        <div class="herotext">
+                            <h2>ART & EXPERIENCE</h2>
+                            <h4>예술이 일상과 이어지는 순간</h4>
+                            <ul class="heroTabs">
+                                <li class="active">관람안내 <span>(VISIT)</span></li>
+                                <li>전시 <span>(EXHIBITIONS)</span></li>
+                                <li>프로그램 <span>(PROGRAMS)</span></li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <div class="slide slide1 clone">
+                        <div class="herotext">
+                            <h2>ART IN SUWON</h2>
+                            <h4>예술이 머무는 차분한 순간</h4>
+                            <ul class="heroTabs">
+                                <li class="active">관람안내 (VISIT)</li>
+                                <li>전시 (EXHIBITIONS)</li>
+                                <li>프로그램 (PROGRAMS)</li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <button class="arrow next">&#10095;</button>
+        </section>
+        <!-- ------------------------------------page1------------------------------------>
+        <section class="current">
+            <div class="current-inner">
+                <h2>CURRENT EXHIBITIONS</h2>
+                <h4>지금, 미술관에서 만날 수 있는 순간들</h4>
+                <div class="package">
+                    <div class="poster">
+                        <a href="#"><img src="images/paint1.png" alt="paint1"></a>
+                    </div>
+                    <div class="poster">
+                        <a href="#"><img src="images/paint2.png" alt="paint1"></a>
+                    </div>
+                    <div class="poster">
+                        <a href="#"><img src="images/paint3.png" alt="paint1"></a>
+                    </div>
+                    <div class="poster">
+                        <a href="#"><img src="images/paint4.png" alt="paint1"></a>
+                    </div>
+                    <div class="poster">
+                        <a href="#"><img src="images/paint5.png" alt="paint1"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- -------------------------------------page2---------------------------------------->
+        <section class="news">
+            <div class="notice">
+                <h2>NEWS & NOTICE</h2>
+                <h4>소식 및 공지</h4>
+                <div class="tablebox">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>구분</th>
+                                <th>제목</th>
+                                <th>등록일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>719</td>
+                                <td class="red">공지</td>
+                                <td><a href="#">수원시립미술관 개관10주년 맞이 휴관 안내</a></td>
+                                <td>2025-12-26</td>
+                            </tr>
+                            <tr>
+                                <td>718</td>
+                                <td>소식</td>
+                                <td><a href="#">한국근현대미술《머무르는 순간, 흐르는 마음》 전시 작품 일부 변경 안내</a></td>
+                                <td>2025-12-02</td>
+                            </tr>
+                            <tr>
+                                <td>717</td>
+                                <td>고시/공고</td>
+                                <td><a href="#">2026년 상반기 수원시립북수원전시관 수시대관 허가 공고</a></td>
+                                <td>2025-12-02</td>
+                            </tr>
+                            <tr>
+                                <td>716</td>
+                                <td>고시/공고</td>
+                                <td><a href="#">2025 수원시립미술관 동시대미술전《공생》「공상 플랫폼」 창작자 선정 공고</a></td>
+                                <td>2025-11-21</td>
+                            </tr>
+                            <tr>
+                                <td>715</td>
+                                <td>고시/공고</td>
+                                <td><a href="#">2026년 수원시립아트스페이스광교 정기대관 허가자 발표 공고</a></td>
+                                <td>2025-09-15</td>
+                            </tr>
+                            <tr>
+                                <td>714</td>
+                                <td>소식</td>
+                                <td><a href="#">2026년 상반기 수원시립만석전시관(수원시립북수원전시관) 정기대관 허가자 발표 공고</a></td>
+                                <td>2025-09-05</td>
+                            </tr>
+                            <tr>
+                                <td>713</td>
+                                <td>소식</td>
+                                <td><a href="#">수원시립아트스페이스광교 [혼자-함께] 워크숍 신청서</a></td>
+                                <td>2025-08-20</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="calendar">
+                <div class="cal-head">
+                    <button type="button" class="cal-btn prev" aria-label="prev month">‹</button>
+                    <div class="cal-title"><span class="y"></span>년 <span class="m"></span>월</div>
+                    <button type="button" class="cal-btn next" aria-label="next month">›</button>
+                </div>
+
+                <table class="cal-table">
+                    <thead>
+                        <tr>
+                            <th>일</th>
+                            <th>월</th>
+                            <th>화</th>
+                            <th>수</th>
+                            <th>목</th>
+                            <th>금</th>
+                            <th>토</th>
+                        </tr>
+                    </thead>
+                    <tbody class="cal-body"></tbody>
+                </table>
+            </div>
+
+        </section>
+        <!-- -------------------------------------page3------------------------------------------------>
+        <section class="collection">
+            <div class="collection-inner">
+                <h2>COLLECTION HIGHLIGHTS</h2>
+                <h4>지금, 미술관에서 만날 수 있는 순간들</h4>
+
+                <div class="collage">
+                    <div class="collage-left">
+                        <a href="#"><img src="images/p1.jpg" alt="p1"></a>
+                    </div>
+
+                    <div class="collage-mid">
+                        <a href="#"><img class="mid-top" src="images/p2.jpg" alt="p2"></a>
+                        <div class="mid-bottom">
+                            <a href="#"><img src="images/p3.jpg" alt="p3"></a>
+                            <a href="#"><img src="images/p4.jpg" alt="p4"></a>
+                        </div>
+                    </div>
+
+                    <div class="collage-right">
+                        <a href="#"><img src="images/p5.jpg" alt="p5"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- -------------------------------------page4------------------------------------------------>
+        <!-- -------------------------------------page5------------------------------------------------>
+        <section class="moments">
+            <div class="moments-inner">
+
+                <!-- 왼쪽 텍스트 -->
+                <div class="moments-text">
+                    <div class="moments-copy">
+                        <p class="eyebrow">우리 미술관의 순간들</p>
+                        <h2>OUR MOMENTS</h2>
+                        <p class="desc">
+                            직접 손으로 만들며 배우는 창작 워크숍을 통해<br>
+                            아이와 가족이 함께 작품을 완성하고<br>
+                            작은 성취와 즐거움을 경험하는 참여형 프로그램입니다.
+                        </p>
+
+                        <div class="nav">
+                            <button type="button" class="prev">←</button>
+                            <span class="count"><strong id="current">01</strong> / 05</span>
+                            <button type="button" class="next">→</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 오른쪽 이미지 슬라이드 -->
+                <div class="moments-slider">
+                    <div class="slides">
+                        <img src="images/m1.jpg">
+                        <img src="images/m2.jpg">
+                        <img src="images/m3.jpg">
+                        <img src="images/m4.jpg">
+                        <img src="images/m5.jpg">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- -------------------------------------page4------------------------------------------------>
+        <footer>
+            <div class="flogo">
+                <h1>
+                    <img src="images/footer logo.jpg" alt="logo">
+                </h1>
+            </div>
+            <div class="letter">
+                <h3>수원시립미술관</h3>
+                <p>(우 16252) 경기도 수원시 팔달구 정조로 833 (신풍동)</p>
+                <p>TEL:031-5191-3800</p>
+                <p>홈페이지의 모든 내용들은 무단 복제가 불가합니다.</p>
+                <p>Copyright &copy; 2019 SUWON MUSEUM OF ART. ALL RIGHTS RESERVED.</p>
+            </div>
+            <div class="iconto">
+                <div class="icon0">
+                    <div class="icon1">
+                        <ul>
+                            <li><a href="#"><img src="images/icon1.png" alt="insta"></a></li>
+                            <li><a href="#"><img src="images/icon2.png" alt="facebook"></a></li>
+                            <li><a href="#"><img src="images/icon3.png" alt="kakao"></a></li>
+                            <li><a href="#"><img src="images/icon4.png" alt="x"></a></li>
+                        </ul>
+                    </div>
+                    <div class="icon2">
+                        <a href="#">이용약관</a>
+                        <a href="#">개인정보처리방침</a>
+                    </div>
+                    <div class="icon3">
+                        <select>
+                            <option>관련기관 바로가기</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- FIXED QUICK MENU -->
+    <div class="quickMenu" aria-label="quick menu">
+        <button class="qbtn" type="button" aria-label="chat">
+            <img src="images/Group 17.png" alt="chat">
+        </button>
+
+        <button class="qbtn" type="button" aria-label="grid">
+            <img src="images/Group 19.png" alt="menu">
+        </button>
+
+        <button class="qbtn top" type="button" aria-label="back to top">
+            <img src="images/Group 18.png" alt="top">
+        </button>
+    </div>
+
+</body>
+
+</html>

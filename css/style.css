@@ -1,0 +1,1163 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrap {
+    margin: 0 auto;
+    width: 1920px;
+    position: relative;
+    overflow: hidden;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* ----------------------------header-------------------------------- */
+header {
+    position: fixed;
+    width: 1920px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    z-index: 9999;
+}
+
+header h1 {
+    position: absolute;
+    top: 20px;
+    left: 150px;
+}
+
+header ul {
+    position: absolute;
+    box-sizing: border-box;
+    gap: 20px;
+    width: 241px;
+    height: 40px;
+    display: flex;
+    top: 30px;
+    right: 150px;
+    padding-left: 10px;
+}
+
+header ul li {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li:hover {
+    opacity: 0.7;
+}
+
+
+/* ---------------------------header--------------------------------- */
+/* ---------------------------page1--------------------------------- */
+.art {
+    position: relative;
+    width: 1920px;
+    height: 900px;
+    overflow: hidden;
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    flex: 0 0 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.slide1 {
+    background-image: url(../images/image01.png);
+}
+
+.slide2 {
+    background-image: url(../images/image02.png);
+}
+
+.slide3 {
+    background-image: url(../images/image03.png);
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 48px;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.7;
+}
+
+.arrow:hover {
+    opacity: 1;
+}
+
+.prev {
+    left: 60px;
+}
+
+.next {
+    right: 60px;
+}
+
+.herotext {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.heroTabs {
+    position: relative;
+    top: 170px;
+    font-family: "Hakgyoansim Poster B";
+    font-size: 16px;
+    font-weight: lighter;
+    margin-top: 36px;
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+}
+
+.heroTabs li {
+    width: 181px;
+    height: 33px;
+    color: rgba(255, 255, 255, 0.35);
+    /* ✅ 비활성 기본 */
+    opacity: 0.6;
+    /* ✅ 비활성 */
+    cursor: pointer;
+    position: relative;
+    transition: opacity .25s ease, color .25s ease;
+    padding-bottom: 10px;
+}
+
+/* ✅ 밑줄(기본 라인: 연하게) */
+.heroTabs li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* ✅ 진행바(Active일 때만 0%→100%) */
+.heroTabs li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 4px;
+    background: rgba(255, 255, 255, 1);
+}
+
+/* ✅ 활성 탭 */
+.heroTabs li.active {
+    color: rgba(255, 255, 255, 1);
+    opacity: 1;
+}
+
+/* ✅ 애니메이션 클래스가 붙으면 3초에 걸쳐 차오름 */
+.heroTabs li.active.progress::after {
+    animation: fillBar 2s linear forwards;
+}
+
+/* hover는 선택사항 */
+.heroTabs li:hover {
+    opacity: 1;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+@keyframes fillBar {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+
+.art h2 {
+    font-size: 105px;
+    font-family: Rockstar;
+    color: white;
+    margin: 0;
+    line-height: 1;
+}
+
+.art h4 {
+    font-size: 28px;
+    font-family: "Hakgyoansim Poster B";
+    font-weight: lighter;
+    color: white;
+    opacity: 0.6;
+    margin-top: 14px;
+}
+
+/* -------------------------------------page1-------------------------------------- */
+/* -------------------------------------page2-------------------------------------- */
+.current {
+    width: 1920px;
+    height: 900px;
+    position: relative;
+    background-image: url(../images/image04.jpg);
+    overflow: hidden;
+}
+
+.current-inner {
+    width: 100%;
+    height: 100%;
+    margin-top: 150px;
+    text-align: center;
+}
+
+.current-inner h2 {
+    font-size: 64px;
+    font-family: Rockstar;
+    color: white;
+    margin: 0;
+    line-height: 1;
+}
+
+.current-inner h4 {
+    font-size: 20px;
+    font-family: "Hakgyoansim Poster B";
+    font-weight: lighter;
+    color: white;
+    opacity: 0.6;
+    margin-top: 14px;
+}
+
+/* 이미지 채우기 */
+
+.poster {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    width: 350px;
+    height: 500px;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    cursor: pointer;
+    pointer-events: auto;
+    /* ✅ JS가 넣는 값(변수) */
+    --tx: 0px;
+    --ty: 0px;
+    --sc: 1;
+    --op: 1;
+    --rz: 0deg;
+
+    /* ✅ hover 추가 효과용 */
+    --boost: 1;
+    /* hover 시 1.06 같은 값으로 */
+    --pop: 0px;
+    /* hover 시 40px 같은 값으로 */
+
+    opacity: var(--op);
+
+    /* ✅ transform은 CSS가 담당 (JS가 덮어쓰지 못함) */
+    transform:
+        translateX(calc(-50% + var(--tx))) translateY(var(--ty)) translateZ(var(--pop)) rotateY(var(--rz)) scale(calc(var(--sc) * var(--boost)));
+
+    transition: transform .55s ease, opacity .55s ease;
+}
+
+.poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.package {
+    position: relative;
+    width: 100%;
+    height: 520px;
+    margin-top: 0;
+    perspective: 1200px;
+}
+
+/* 이동 중에는 hover 효과 전부 무효 + 마우스 이벤트 차단 */
+.package.moving .poster {
+    pointer-events: none;
+    /* hover 자체가 성립 안 하게 */
+}
+
+.package.moving .poster {
+    --boost: 1;
+    --pop: 0px;
+}
+
+
+.poster.is-center.hoverOK:hover {
+    transform: translateX(calc(-50% + var(--tx))) translateY(var(--ty)) scale(calc(var(--sc) * 1.06)) rotateY(var(--rz)) translateZ(40px);
+    z-index: 999;
+}
+
+
+/* -----------------------------------------page2----------------------------------- */
+.news {
+    width: 1920px;
+    height: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    background-image: url(../images/image05.jpg);
+    display: flex;
+}
+
+.notice {
+    position: relative;
+    color: white;
+    width: 606px;
+    height: 644px;
+    background-color: #2B2738;
+    text-align: center;
+    padding: 35px;
+    font-family: "Noto Sans KR";
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.notice h2 {
+    font-size: 64px;
+    font-family: Rockstar;
+    color: white;
+    margin: 0;
+    line-height: 1;
+}
+
+.notice h4 {
+    font-size: 20px;
+    font-family: "Hakgyoansim Poster B";
+    font-weight: lighter;
+    color: white;
+    opacity: 0.6;
+    margin-top: 0px;
+}
+
+.notice table {
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 22px;
+    border-collapse: collapse;
+    border-top: 1px solid rgba(255, 255, 255, .25);
+    border-bottom: 1px solid rgba(255, 255, 255, .25);
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+.notice thead {
+    background-color: #1F1C25;
+    color: white;
+}
+
+.notice thead tr {
+    border-bottom: 2px solid rgba(255, 255, 255, .35);
+}
+
+.notice th,
+.notice td {
+    padding: 8px 10px;
+    line-height: 1.4;
+    vertical-align: middle;
+}
+
+.notice thead th:first-child {
+    width: 40px;
+}
+
+.notice thead th:nth-child(2) {
+    width: 100px;
+}
+
+.notice thead th:nth-child(3) {
+    width: 305px;
+}
+
+.notice thead th:last-child {
+    width: 100px;
+}
+
+.notice tbody a {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+.notice tbody tr:first-child {
+    background-color: #1F1C25;
+}
+
+.notice tbody tr {
+    text-align: center;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, .18);
+}
+
+.notice tbody tr:last-child {
+    border-bottom: none;
+}
+
+.notice table {
+    border-bottom: none;
+}
+
+.notice tbody td:nth-child(3) {
+    text-align: left;
+}
+
+.red {
+    color: red;
+}
+
+
+.notice tbody a:hover {
+    text-decoration: underline;
+    color: rgb(228, 228, 228);
+}
+
+.calendar {
+    width: 606px;
+    height: 644px;
+    /* 필요하면 너 박스에 맞춰 조절 */
+    padding: 50px 50px 50px;
+    background: #2B2738;
+    color: #fff;
+    font-family: "Noto Sans KR";
+    box-sizing: border-box;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cal-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 14px;
+}
+
+.cal-title {
+    font-size: 24px;
+    opacity: .9;
+    letter-spacing: .2px;
+}
+
+.cal-btn {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: rgba(255, 255, 255, .08);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.cal-btn:hover {
+    background: rgba(255, 255, 255, .14);
+}
+
+.cal-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    flex: 1;
+}
+
+.cal-table tbody {
+    height: 100%;
+}
+
+.cal-table tbody tr {
+    height: calc(100%/6);
+}
+
+.cal-table th {
+    font-size: 20px;
+    opacity: .7;
+    padding: 8px 0;
+}
+
+.cal-table td {
+    position: relative;
+    height: 54px;
+    /* 칸 높이(원하는 값으로 조절) */
+    padding: 0;
+    /* 기존 padding 지움 */
+    text-align: center;
+    vertical-align: middle;
+    /* 숫자 기본 기준 */
+}
+
+.cal-table td:not(.empty) {
+    line-height: 1;
+    /* 숫자 줄높이 튀는거 방지 */
+    padding-top: 6px;
+    /* 숫자 위치 조금 아래로 */
+    box-sizing: border-box;
+}
+
+.cal-table td.empty {
+    opacity: 0;
+}
+
+.cal-table td.today {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-weight: bolder;
+    text-shadow: 0 0 20px black;
+}
+
+.cal-table td.closed {
+    color: red;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.cal-table td.mark {
+    font-weight: 700;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+}
+
+.cal-table td small {
+    position: absolute;
+    left: 50%;
+    bottom: 6px;
+    /* 아래 여백 */
+    transform: translateX(-50%);
+    font-size: 11px;
+    line-height: 1;
+    opacity: .85;
+    white-space: nowrap;
+}
+
+/* -----------------------------------------page3---------------------------------- */
+/* -----------------------------------------page4---------------------------------- */
+.collection {
+    width: 1920px;
+    height: 900px;
+    background-image: url(../images/image06.jpg);
+    position: relative;
+}
+
+.collection-inner {
+    width: 100%;
+    height: 100%;
+    padding-top: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 🔥 콜라주 + 텍스트 전부 가운데 */
+    text-align: center;
+}
+
+.collection-inner h2 {
+    font-size: 64px;
+    font-family: Rockstar;
+    color: white;
+    margin: 0;
+    line-height: 1;
+}
+
+.collection-inner h4 {
+    font-size: 20px;
+    font-family: "Hakgyoansim Poster B";
+    font-weight: lighter;
+    color: white;
+    opacity: 0.6;
+    margin-top: 14px;
+}
+
+/* 전체 콜라주 */
+.collage {
+    margin-top: 50px;
+    width: 1372px;
+    height: 509px;
+    display: flex;
+    gap: 0;
+    /* 개별 gap 직접 제어 */
+}
+
+.collage,
+.collage * {
+    overflow: visible;
+}
+
+/* 좌 */
+.collage-left {
+    width: 321px;
+    height: 509px;
+    margin-right: 8px;
+}
+
+/* 중 */
+.collage-mid {
+    width: 543px;
+    height: 509px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    /* 위/아래 */
+    margin-right: 9px;
+}
+
+/* 중 상단 */
+.mid-top {
+    width: 543px;
+    height: 306px;
+}
+
+/* 중 하단 */
+.mid-bottom {
+    display: flex;
+    gap: 5px;
+    width: 543px;
+    height: 197px;
+}
+
+.mid-bottom img {
+    width: 269px;
+    height: 197px;
+}
+
+/* 우 */
+.collage-right {
+    width: 491px;
+    height: 509px;
+}
+
+/* 공통 */
+.collage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    z-index: 1;
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        z-index 0.35s;
+}
+
+.collage img:hover {
+    transform: scale(1.1);
+    z-index: 20;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+/*-----------------------------------------page4---------------------------------- */
+
+.moments {
+    width: 1920px;
+    height: 900px;
+    background-image: url(../images/image07.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 중앙 기준선 */
+.moments::after {
+    content: "";
+    position: absolute;
+    left: 160px;
+    right: 50%;
+    top: 50%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.22);
+    z-index: 1;
+}
+
+/* 내부 레이아웃 */
+.moments-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* =========================
+   LEFT TEXT
+========================= */
+
+.moments-text {
+    width: 520px;
+    height: 550px;
+    padding-left: 160px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+.moments-copy {
+    position: absolute;
+    left: 160px;
+    top: 50%;
+    transform: translateY(-125%);
+    /* 🔥 선-텍스트 간격 조절 포인트 */
+    width: 520px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* 소제목 */
+.moments-text .eyebrow {
+    font-size: 20px;
+    font-family: "Hakgyoansim Poster B";
+    font-weight: lighter;
+    opacity: 0.6;
+    margin-bottom: 12px;
+}
+
+/* 메인 타이틀 */
+.moments-text h2 {
+    font-size: 64px;
+    font-family: Rockstar;
+    line-height: 1;
+    margin-bottom: 22px;
+}
+
+/* 설명 */
+.moments-text .desc {
+    font-family: "Noto Sans KR";
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.6;
+    max-width: 380px;
+}
+
+/* 네비게이션 */
+.nav {
+    position: absolute;
+    left: 0;
+    bottom: -290px;
+    /* 🔥 nav 위치 조절 */
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.nav button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.nav .count {
+    font-size: 14px;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* =========================
+   RIGHT SLIDER
+========================= */
+
+/* 슬라이드 설정값 */
+:root {
+    --slideW: 1000px;
+    --slideH: 550px;
+    --peek: 260px;
+    /* 🔥 다음 사진 보이는 영역 */
+}
+
+/* 보이는 영역 (peek 포함) */
+.moments-slider {
+    margin-left: 160px;
+    width: calc(var(--slideW) + var(--peek));
+    height: var(--slideH);
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+}
+
+/* 트랙 */
+.moments-slider .slides {
+    display: flex;
+    height: 100%;
+    transform: translateX(0);
+    transition: transform 0.55s ease;
+    will-change: transform;
+}
+
+/* 슬라이드 한 장 */
+.moments-slider .slides img {
+    width: var(--slideW);
+    height: var(--slideH);
+    flex: 0 0 var(--slideW);
+    object-fit: cover;
+    display: block;
+}
+
+.slides img {
+    width: 1000px;
+    height: 550px;
+    flex: 0 0 auto;
+    object-fit: cover;
+    display: block;
+    margin-right: 40px;
+    /* 🔥 사진 사이 간격 */
+}
+
+/*-----------------------------------------page5---------------------------------- */
+
+
+footer {
+    width: 1920px;
+    height: 300px;
+    display: flex;
+    align-items: flex-start;
+    padding: 55px 160px 0 160px;
+    box-sizing: border-box;
+    gap: 80px;
+    background: #5b5b64;
+}
+
+/* =================
+   LEFT (logo area)
+================= */
+footer .flogo {
+    width: 515px;
+
+    /* ✅ 로고는 왼쪽 상단에 위치 */
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+footer h1 {
+    width: 306.29px;
+    height: 80px;
+    margin: 0;
+}
+
+footer h1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* =================
+   CENTER (text area)
+================= */
+footer .letter {
+    width: 970px;
+
+    /* ✅ 텍스트도 위에서 시작 */
+    padding-top: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+footer .letter h3 {
+    font-size: 22px;
+    margin: 0 0 12px 0;
+    font-weight: 700;
+}
+
+footer .letter p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 26px;
+    opacity: .9;
+}
+
+footer .letter p:last-child {
+    margin-top: 12px;
+    font-size: 12px;
+    opacity: .85;
+}
+
+/* =================
+   RIGHT (icons/links/select)
+================= */
+footer .iconto {
+    width: 435px;
+
+    /* ✅ 오른쪽 상단에 딱 붙게 */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+}
+
+footer .icon0 {
+    width: 236px;
+    /* 오른쪽 묶음 폭(원하면 조절) */
+    height: auto;
+
+    /* ✅ 위에서부터 차곡차곡 */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* 오른쪽 정렬 */
+    gap: 14px;
+}
+
+/* 아이콘 4개 한 줄 */
+footer .icon1 ul {
+    width: 236px;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 18px;
+}
+
+footer .icon1 ul li {
+    margin: 0;
+}
+
+footer .icon1 ul li img {
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+/* 이용약관/개인정보 링크 (아이콘 아래 한 줄) */
+footer .icon2 {
+    display: flex;
+    justify-content: center;
+    width: 236px;
+    gap: 50px;
+}
+
+footer .icon2 a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: .9;
+}
+
+footer .icon2 a:hover {
+    text-decoration: underline;
+    opacity: 1;
+}
+
+footer .icon3 select {
+    width: 236px;
+    height: 36px;
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, .6);
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+
+/* FIXED QUICK MENU */
+.quickMenu {
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    transform: translate(calc(900px - 30px), 60%);
+    z-index: 5000;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.quickMenu .qbtn {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 0;
+    cursor: pointer;
+
+    background: rgba(25, 25, 35, 0.65);
+    backdrop-filter: blur(6px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: transform .18s ease, background .18s ease;
+}
+
+.quickMenu .qbtn i {
+    font-size: 22px;
+    color: rgba(255, 255, 255, .9);
+}
+
+.quickMenu .qbtn:hover {
+    transform: translateY(-3px) scale(1.03);
+    background: rgba(25, 25, 35, 0.8);
+}
+
+/* 맨 위로 버튼: 스크롤 전엔 숨김 */
+/* TOP 버튼 기본 상태 */
+.quickMenu .qbtn.top {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px) scale(0.95);
+
+    transition:
+        opacity .3s cubic-bezier(.4, 0, .2, 1),
+        transform .3s cubic-bezier(.4, 0, .2, 1);
+}
+
+/* TOP 버튼 보일 때 */
+.quickMenu.showTop .qbtn.top {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+}
+
+.quickMenu .qbtn.top:hover {
+    transform: translateY(-3px) scale(1.03);
+    background: rgba(25, 25, 35, 0.8);
+}
+
+body {
+    overflow-x: clip;
+}
+
+header ul li .hamburgerBtn {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    display: block;
+}
+
+header ul li .hamburgerBtn img {
+    display: block;
+}
+
+/* 오버레이 */
+.menuOverlay {
+    position: fixed;
+    /* ★변경 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.25s;
+    z-index: 9998;
+}
+
+/* 상태창(사이드 메뉴) */
+.sideMenu {
+    position: fixed;
+    /* ★변경 */
+    top: 0;
+    right: 0;
+    width: 340px;
+    max-width: 85vw;
+    height: 100vh;
+    /* ★ 100vh 말고 100% */
+    background: rgba(15, 15, 15, 0.96);
+    backdrop-filter: blur(8px);
+    transform: translateX(100%);
+    transition: 0.25s;
+    z-index: 9999;
+    padding: 18px 18px 26px;
+    box-sizing: border-box;
+}
+
+/* 상단 */
+.sideTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.sideTitle {
+    color: #fff;
+    font-size: 30px;
+    font-family: Rockstar;
+    letter-spacing: 0.08em;
+    margin-left: 5px;
+}
+
+.sideClose {
+    border: 0;
+    background: transparent;
+    color: #fff;
+    margin-right: 20px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* 메뉴 링크 */
+.sideNav a {
+    font-family: "Noto Sans KR";
+    display: block;
+    padding: 14px 6px;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    font-size: 16px;
+}
+
+.sideNav a:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* 열림 상태 */
+body.menuOpen .menuOverlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+body.menuOpen .sideMenu {
+    transform: translateX(0);
+}
+
+body.menuOpen {
+    overflow: hidden;
+}

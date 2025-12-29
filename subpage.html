@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미술관 소개</title>
+    <link rel="stylesheet" href="css/style_sub.css">
+    <script src="script/script_sub.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <h1>
+                <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+            </h1>
+            <ul>
+                <li><a href="#"><img src="images/search.jpg" alt="search"></a></li>
+                <li><a href="#"><img src="images/mypage.jpg" alt="mypage"></a></li>
+                <li><a href="#"><img src="images/language.jpg" alt="language"></a></li>
+                <li><button type="button" class="hamburgerBtn" id="btnMenu" aria-label="메뉴 열기" aria-controls="sideMenu"
+                        aria-expanded="false">
+                        <img src="images/hamburger.jpg" alt="hamburger"></button></li>
+            </ul>
+        </header>
+
+        <div class="menuOverlay" id="menuOverlay"></div>
+
+        <aside class="sideMenu" id="sideMenu" aria-hidden="true">
+            <div class="sideTop">
+                <p class="sideTitle">MENU</p>
+                <button type="button" class="sideClose" id="btnClose" aria-label="메뉴 닫기">✕</button>
+            </div>
+
+            <nav class="sideNav">
+                <a href="subpage.html">미술관 소개 (INTROTUCE)</a>
+                <a href="index.html">관람안내 (VISIT)</a>
+                <a href="subpage.html">전시 (EXHIBITIONS)</a>
+                <a href="index.html">프로그램 (PROGRAMS)</a>
+                <a href="subpage.html">소식/공지 (NEWS)</a>
+            </nav>
+        </aside>
+
+        <div>
+            <img src="images/Frame 30.jpg" alt="sub">
+        </div>
+        <footer>
+            <div class="flogo">
+                <h1>
+                    <img src="images/footer logo.jpg" alt="logo">
+                </h1>
+            </div>
+            <div class="letter">
+                <h3>수원시립미술관</h3>
+                <p>(우 16252) 경기도 수원시 팔달구 정조로 833 (신풍동)</p>
+                <p>TEL:031-5191-3800</p>
+                <p>홈페이지의 모든 내용들은 무단 복제가 불가합니다.</p>
+                <p>Copyright &copy; 2019 SUWON MUSEUM OF ART. ALL RIGHTS RESERVED.</p>
+            </div>
+            <div class="iconto">
+                <div class="icon0">
+                    <div class="icon1">
+                        <ul>
+                            <li><a href="#"><img src="images/icon1.png" alt="insta"></a></li>
+                            <li><a href="#"><img src="images/icon2.png" alt="facebook"></a></li>
+                            <li><a href="#"><img src="images/icon3.png" alt="kakao"></a></li>
+                            <li><a href="#"><img src="images/icon4.png" alt="x"></a></li>
+                        </ul>
+                    </div>
+                    <div class="icon2">
+                        <a href="#">이용약관</a>
+                        <a href="#">개인정보처리방침</a>
+                    </div>
+                    <div class="icon3">
+                        <select>
+                            <option>관련기관 바로가기</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+        <!-- FIXED QUICK MENU -->
+        <div class="quickMenu" aria-label="quick menu">
+            <button class="qbtn" type="button" aria-label="chat">
+                <img src="images/Group 17.png" alt="chat">
+            </button>
+
+            <button class="qbtn" type="button" aria-label="grid">
+                <img src="images/Group 19.png" alt="menu">
+            </button>
+
+            <button class="qbtn top" type="button" aria-label="back to top">
+                <img src="images/Group 18.png" alt="top">
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>
