@@ -187,121 +187,134 @@ CURRENT EXHIBITIONS (poster loop)
 ========================= */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // ✅ current 섹션 poster만
-  const posters = Array.from(document.querySelectorAll('.current .package .poster'));
-  const packageEl = document.querySelector('.current .package');
 
-  if (posters.length !== 5 || !packageEl) return;
+  function initCurrentPoster() {
+    const posters = Array.from(document.querySelectorAll('.current .package .poster'));
+    const packageEl = document.querySelector('.current .package');
 
-  // 5장 포지션
-  const pos = [
-    { x: -470, y: 200, s: 0.86, o: 0.65, z: 1, r: -22 },
-    { x: -250, y: 100, s: 0.93, o: 0.80, z: 2, r: -12 },
-    { x: 0,    y: 0,   s: 1.00, o: 1.00, z: 5, r: 0 },
-    { x: 250,  y: 100, s: 0.93, o: 0.80, z: 2, r: 12 },
-    { x: 470,  y: 200, s: 0.86, o: 0.65, z: 1, r: 22 }
-  ];
+    // ✅ 처음 로딩에서 아직 DOM이 덜 잡히면 초기화 보류
+    if (posters.length !== 5 || !packageEl) return false;
 
-  let state = posters.slice(); // 현재 순서
-  let lock = false;
+    // 5장 포지션
+    const pos = [
+      { x: -470, y: 200, s: 0.86, o: 0.65, z: 1, r: -22 },
+      { x: -250, y: 100, s: 0.93, o: 0.80, z: 2, r: -12 },
+      { x: 0,    y: 0,   s: 1.00, o: 1.00, z: 5, r: 0 },
+      { x: 250,  y: 100, s: 0.93, o: 0.80, z: 2, r: 12 },
+      { x: 470,  y: 200, s: 0.86, o: 0.65, z: 1, r: 22 }
+    ];
 
-  function setHoverOK(on) {
-    posters.forEach(el => el.classList.toggle('hoverOK', on));
-  }
+    let state = posters.slice();
+    let lock = false;
 
-  function render() {
-    state.forEach((el, i) => {
-      const p = pos[i];
+    function setHoverOK(on) {
+      posters.forEach(el => el.classList.toggle('hoverOK', on));
+    }
 
-      el.classList.toggle('is-center', i === 2);
+    function render() {
+      state.forEach((el, i) => {
+        const p = pos[i];
+        el.classList.toggle('is-center', i === 2);
+        el.style.zIndex = p.z;
+        el.style.setProperty('--tx', `${p.x}px`);
+        el.style.setProperty('--ty', `${p.y}px`);
+        el.style.setProperty('--sc', p.s);
+        el.style.setProperty('--op', p.o);
+        el.style.setProperty('--rz', `${p.r}deg`);
+      });
+    }
 
-      el.style.zIndex = p.z;
-      el.style.setProperty('--tx', `${p.x}px`);
-      el.style.setProperty('--ty', `${p.y}px`);
-      el.style.setProperty('--sc', p.s);
-      el.style.setProperty('--op', p.o);
-      el.style.setProperty('--rz', `${p.r}deg`);
-    });
-  }
+    function nextOne() {
+      if (lock) return;
+      lock = true;
 
-  function nextOne() {
-    if (lock) return;
-    lock = true;
+      setHoverOK(false);
+      packageEl.classList.add('moving');
 
-    setHoverOK(false);
-    packageEl.classList.add('moving');
+      state.push(state.shift());
+      render();
 
-    state.push(state.shift()); // 다음
-    render();
+      setTimeout(() => {
+        lock = false;
+        packageEl.classList.remove('moving');
+        setHoverOK(true);
+      }, 560);
+    }
 
-    setTimeout(() => {
-      lock = false;
-      packageEl.classList.remove('moving');
-      setHoverOK(true);
-    }, 560);
-  }
+    function prevOne() {
+      if (lock) return;
+      lock = true;
 
-  function prevOne() {
-    if (lock) return;
-    lock = true;
+      setHoverOK(false);
+      packageEl.classList.add('moving');
 
-    setHoverOK(false);
-    packageEl.classList.add('moving');
+      state.unshift(state.pop());
+      render();
 
-    state.unshift(state.pop()); // 이전(핵심)
-    render();
+      setTimeout(() => {
+        lock = false;
+        packageEl.classList.remove('moving');
+        setHoverOK(true);
+      }, 560);
+    }
 
-    setTimeout(() => {
-      lock = false;
-      packageEl.classList.remove('moving');
-      setHoverOK(true);
-    }, 560);
-  }
+    // ✅ 자동 슬라이드
+    let posterAutoTimer = null;
 
-  // ✅ 자동 슬라이드
-  let posterAutoTimer = null;
-
-  function startAutoPoster() {
-    stopAutoPoster();
-    posterAutoTimer = setInterval(nextOne, 2000);
-  }
-
-  function stopAutoPoster() {
-    if (!posterAutoTimer) return;
-    clearInterval(posterAutoTimer);
-    posterAutoTimer = null;
-  }
-
-  // ✅ 클릭 동작 (가운데=링크 / 좌우=이동)
-  posters.forEach((el) => {
-    el.addEventListener('click', (e) => {
+    function startAutoPoster() {
       stopAutoPoster();
+      posterAutoTimer = setInterval(nextOne, 1500);
+    }
 
-      const idx = state.indexOf(el);
-      if (idx === -1) return;
+    function stopAutoPoster() {
+      if (!posterAutoTimer) return;
+      clearInterval(posterAutoTimer);
+      posterAutoTimer = null;
+    }
 
-      if (idx === 2) {
-        // 가운데는 링크 이동 허용
+    // ✅ 클릭 동작
+    posters.forEach((el) => {
+      el.addEventListener('click', (e) => {
+        stopAutoPoster();
+
+        const idx = state.indexOf(el);
+        if (idx === -1) return;
+
+        if (idx === 2) {
+          // 가운데는 링크 이동 허용
+          // (링크면 그냥 넘어가고, 자동만 재시작)
+          startAutoPoster();
+          return;
+        }
+
+        e.preventDefault();
+        if (idx < 2) prevOne();
+        else nextOne();
+
         startAutoPoster();
-        return;
-      }
-
-      e.preventDefault();
-      if (idx < 2) prevOne();
-      else nextOne();
-
-      startAutoPoster();
+      });
     });
-  });
 
-  // ✅ 마우스 올리면 자동 멈춤
-  packageEl.addEventListener('mouseenter', stopAutoPoster);
-  packageEl.addEventListener('mouseleave', startAutoPoster);
+    // ✅ hover 시 멈춤
+    packageEl.addEventListener('mouseenter', stopAutoPoster);
+    packageEl.addEventListener('mouseleave', startAutoPoster);
 
-  // 최초 실행
-  render();
-  setHoverOK(true);
-  startAutoPoster();
+    // ✅ 최초 실행 (중요: 자동 시작을 살짝 늦춰서 로딩 직후 hover/레이아웃 이슈 방지)
+    render();
+    setHoverOK(true);
+    setTimeout(startAutoPoster, 200);
+
+    return true;
+  }
+
+  // ✅ 첫 로딩에서 못 잡으면 재시도(최대 3초)
+  if (initCurrentPoster()) return;
+
+  let tries = 0;
+  const retry = setInterval(() => {
+    tries++;
+    if (initCurrentPoster() || tries >= 30) clearInterval(retry);
+  }, 100);
 });
 
 
@@ -640,3 +653,4 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape') closeMenu();
   });
 });
+
